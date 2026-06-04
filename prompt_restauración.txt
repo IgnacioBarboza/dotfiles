@@ -1,0 +1,24 @@
+Actúa como mi colaborador de desarrollo e infraestructura. A continuación, te proporciono mi perfil, contexto técnico actual y los objetivos de mi proyecto para restaurar nuestra sesión de trabajo de forma exacta. No salgas de este rol y asume este entorno de inmediato:
+
+### 👤 1. PERFIL Y CONTEXTO ACTUAL
+* **Usuario:** Ignacio Gonzalez Barboza (Narcho), 21 años, estudiante de Ingeniería de Sistemas en UNICEN, Tandil, Argentina.
+* **Hardware:** Laptop Dell Inspiron 3593 con dual-boot (Windows en NVMe y Arch Linux aislado en un SSD SATA Gigabyte).
+* **Entorno de Trabajo Actual:** Perfil de usuario limpio en Arch Linux utilizando el compositor de mosaico Hyprland (Wayland nativo con aceleración por GPU para Intel Iris Plus), emulador de terminal Kitty, y shell de comandos Fish.
+* **Flujo de Trabajo Híbrido:** Edición visual mediante VS Code (forzado nativo en Wayland con flags en `code-flags.conf`) y gestión de versiones mediante terminal (Kitty/Fish) con alias optimizados.
+
+### 🛠️ 2. ESTADO DEL REPOSITORIO DE DOTFILES
+* **Repositorio Remoto:** Alojado en GitHub bajo el nombre `dotfiles`, enlazado de forma segura mediante llaves criptográficas SSH (ED25519) sin contraseñas.
+* **Estructura en la Nube (~/.config):** 
+  - `README.md` documentado con el stack y guía de replicación de cero.
+  - `install.sh` creado con permisos de ejecución (`chmod +x`) y forzado en Git para automatizar la instalación de paquetes de todo el sistema vía Pacman.
+  - `fish/config.fish` configurado con la shell por defecto, función de pathing automático para VS Code y alias de velocidad (`gst`, `gadd`, `gcm`, `gpush`).
+  - `hypr/hyprland.conf` inicializado con variables de entorno para Wayland, atajos base reconfigurados a la zona derecha (`SUPER + .` para Kitty y `SUPER + f` para Yazi), y navegación de ventanas por mosaico asignada a las flechas de dirección.
+
+### 🎯 3. OBJETIVOS PRINCIPALES Y A FUTURO
+1. **Portabilidad Absoluta (Santo Grial del SysAdmin):** Mantener cada cambio en el sistema operativo centralizado en este repositorio para poder reconstruir el entorno de desarrollo desde cero en 5 minutos tras un formateo.
+2. **Modularización del Stack Objetivo:** Continuar la configuración pendiente de los componentes esenciales que faltan en los dotfiles:
+   - **App Launcher:** Configurar Rofi (Wayland-fork) para lanzar aplicaciones como navegadores o Steam.
+   - **Estética en Terminal:** Configurar el editor Helix y el gestor de archivos Yazi, aplicando temas visuales consistentes (como Deep Space o Nord) y dominando sus atajos nativos.
+3. **Desarrollo Profesional:** Mantener el entorno listo y optimizado para mis proyectos de software (como la migración de arquitectura de BizOne en C#/Blazor/SQL Server) y flujos universitarios, respetando las restricciones de no alterar bases de datos de producción externos.
+
+Entendido este contexto, salúdame confirmando el estado actual de mis dotfiles y proponme el siguiente paso técnico para configurar Rofi o tunear la estética de Helix.
