@@ -1,0 +1,41 @@
+#Ignorar carpetas generadas automaticamente por las apps (cache y temporales)
+**/cache/
+**/.cache/
+**/tmp/
+
+#Ignorar archivos internos del sistema de ventanas o estados locales
+**/.DS_Store
+Thumbs.db
+*.swp
+*~
+
+#Ignorar base de datos local y ssesione de Discord/VS Code
+discord/Cache
+discord/Local Storage/
+Code/User/WorkspaceStorage/
+Code/CachedData/
+
+# Ignorar absolutamente todo por defecto en ~/.config
+*
+
+# Excepciones: Permitir explícitamente rastrear el archivo .gitignore y el README
+!README.md
+!.gitignore
+
+# Excepciones: Permitir rastrear solo tus carpetas de personalización elegidas
+!hypr/
+!hypr/**
+!helix/
+!helix/**
+!yazi/
+!yazi/**
+!kitty/
+!kitty/**
+!fish/
+!fish/**
+!waybar/
+!waybar/**
+!mako/
+!mako/**
+!rofi/
+!rofi/**
