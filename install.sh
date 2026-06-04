@@ -23,7 +23,9 @@ sudo pacman -S --noconfirm \
     code \
     xdg-desktop-portal-hyprland \
     xdg-desktop-portal-gtk \
-    git
+    git \
+    mako \
+    libnotify
 
 # 3. Configurar Fish como la Shell por defecto
 echo "--> Configurando Fish como la shell predeterminada..."

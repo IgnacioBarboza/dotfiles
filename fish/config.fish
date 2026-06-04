@@ -10,6 +10,23 @@ function code
     end
 end
 
+# Codigo para agregar sudo con esc + esc
+function prepend_sudo_or_fallback
+    set -l cmd (commandline)
+    if test -z "$cmd"
+        commandline -r "sudo $history[1]"
+    else
+        commandline -C 0
+        commandline -i "sudo "
+    end
+    commandline -f end-of-line
+end
+
+# Asignar la función a la secuencia Esc Esc (\e\e)
+function fish_user_key_bindings
+    bind \e\e prepend_sudo_or_fallback
+end
+
 # Alias basicos
 
 alias hx="helix"
