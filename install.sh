@@ -25,7 +25,15 @@ sudo pacman -S --noconfirm \
     xdg-desktop-portal-gtk \
     git \
     mako \
-    libnotify
+    libnotify \
+    ffmpegthumbnailer \
+    p7zip \
+    jq \
+    poppler \
+    fd \
+    ripgrep \
+    fzf \
+    imagemagick
 
 # 3. Configurar Fish como la Shell por defecto
 echo "--> Configurando Fish como la shell predeterminada..."

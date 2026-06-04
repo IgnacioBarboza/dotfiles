@@ -27,10 +27,20 @@ function fish_user_key_bindings
     bind \e\e prepend_sudo_or_fallback
 end
 
+# Función para que Yazi cambie el directorio de Fish al salir
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
 # Alias basicos
 
 alias hx="helix"
-
+set -gx EDITOR helix
 # Escribir 'y' en la terminal abrirá el gestor de archivos Yazi al instante
 alias y="yazi"
 

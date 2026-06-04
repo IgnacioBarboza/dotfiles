@@ -1,11 +1,26 @@
-theme = "catppuccin_mocha"
+theme = "nord"
 
 [editor]
-line-number = "relative" # Números de línea relativos (clave para moverte rápido)
-mouse = false            # Desactivamos el mouse para forzar la memoria muscular
-cursorline = true        # Resalta la línea donde estás parado
+line-number = "relative"
+cursorline = true
+color-modes = true
+bufferline = "multiple" # Muestra los archivos abiertos arriba como pestañas
 
 [editor.cursor-shape]
-insert = "bar"           # Cursor de barra cuando escribís
-normal = "block"         # Cursor de bloque cuando navegás
-select = "underline"     # Cursor subrayado al seleccionar
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false # Para poder buscar archivos ocultos en tus dotfiles
+
+[keys.normal]
+# Saltar palabras enteras con Control + Flechas
+C-right = "move_next_word_start"
+C-left = "move_prev_word_start"
+
+# Marcar texto con Shift + Flechas
+S-right = "extend_char_right"
+S-left = "extend_char_left"
+S-up = "extend_line_up"
+S-down = "extend_line_down"
