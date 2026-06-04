@@ -2,54 +2,73 @@
 * {
     border: none;
     font-family: "JetBrains Mono", sans-serif;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
 }
 
 window#waybar {
-    background-color: transparent; /* Toda la barra contenedora se vuelve invisible */
+    background-color: transparent;
 }
 
 /* --- ESTILO ÓVALO FLOTANTE PARA CADA ISLA --- */
+#custom-power,
 #workspaces,
 #clock,
+#mpris,
 .modules-right {
-    background-color: #11111b; /* Fondo oscuro para los óvalos */
+    background-color: #11111b;
     border: 1px solid #313244;
-    border-radius: 20px; /* Bordes ultra redondeados para formar óvalos */
-    padding: 2px 14px;
+    border-radius: 12px;
+    padding: 0px 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Margen extra para separar el botón de apagado de los escritorios */
+#custom-power {
+    margin-right: 2px;
+    color: #f38ba8; /* Rojo facha para el botón de apagado */
+    font-size: 13px;
+}
 /* --- ANIMACIÓN DINÁMICA DE WORKSPACES --- */
 #workspaces button {
-    padding: 0;
-    margin: 4px 6px;
-    min-width: 8px;       /* Corregido: width por min-width */
-    min-height: 8px;      /* Corregido: height por min-height */
-    border-radius: 50%;   /* Por defecto son círculos perfectos */
-    background-color: #585b70; /* Color apagado para los inactivos */
-    color: transparent;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación suave de estiramiento */
+    padding: 0 8px;
+    color: #585b70; /* Gris apagado */
+    background: transparent;
 }
-
 #workspaces button.active {
-    background-color: #89b4fa; /* Azul para el seleccionado */
-    min-width: 24px;           /* Se estira y se vuelve un óvalo alargado */
-    border-radius: 10px;
+    color: #89b4fa; /* Resalta el número en azul */
+    font-weight: bold;
+}
+#workspaces button:hover {
+    background-color: #585b70; /* Mantiene su color gris base sin brillar */
+    box-shadow: none;
+    text-shadow: none;
 }
 
-/* --- COLORES PARA LOS COMPONENTES DE LA DERECHA --- */
+#workspaces button.active:hover {
+    background-color: #89b4fa; /* Mantiene su color azul activo si estás encima */
+}
+/* --- CONFIGURACIÓN DE ELEMENTOS INTERNOS DE LA DERECHA (Iconos Grandes) --- */
+#network,
+#pulseaudio,
+#language,
+#battery {
+    padding: 0 6px;
+    font-size: 14px; /* Agrandamos los iconos y texto del panel derecho */
+}
+
 #network {
     color: #a6e3a1; /* Verde */
-    margin-right: 12px;
+}
+
+#pulseaudio {
+    color: #74c7ec; /* Celeste claro para el audio */
 }
 
 #language {
-    color: #cba6f7; /* Violeta pastel muy facha */
-    margin-right: 12px;
+    color: #cba6f7; /* Violeta */
 }
 
 #battery {
-    color: #f9e2af; /* Amarillo pastel */
+    color: #f9e2af; /* Amarillo */
 }

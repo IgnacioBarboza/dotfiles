@@ -4,7 +4,10 @@ end
 
 # Atajo definitivo para VS Code nativo en Wayland y con pathing automático
 function code
-    command code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations $argv
+    command code $argv --detach >/dev/null 2>&1
+    if contains "." $argv or test (count $argv) -eq 0
+        kill -9 (pgrep -o kitty) # Mata de forma segura la terminal actual desde donde lo invocaste
+    end
 end
 
 # Alias basicos
