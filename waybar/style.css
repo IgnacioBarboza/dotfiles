@@ -1,0 +1,55 @@
+/* --- CONFIGURACIÓN BASE TRANSPARENTE --- */
+* {
+    border: none;
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: transparent; /* Toda la barra contenedora se vuelve invisible */
+}
+
+/* --- ESTILO ÓVALO FLOTANTE PARA CADA ISLA --- */
+#workspaces,
+#clock,
+.modules-right {
+    background-color: #11111b; /* Fondo oscuro para los óvalos */
+    border: 1px solid #313244;
+    border-radius: 20px; /* Bordes ultra redondeados para formar óvalos */
+    padding: 2px 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ANIMACIÓN DINÁMICA DE WORKSPACES --- */
+#workspaces button {
+    padding: 0;
+    margin: 4px 6px;
+    min-width: 8px;       /* Corregido: width por min-width */
+    min-height: 8px;      /* Corregido: height por min-height */
+    border-radius: 50%;   /* Por defecto son círculos perfectos */
+    background-color: #585b70; /* Color apagado para los inactivos */
+    color: transparent;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación suave de estiramiento */
+}
+
+#workspaces button.active {
+    background-color: #89b4fa; /* Azul para el seleccionado */
+    min-width: 24px;           /* Se estira y se vuelve un óvalo alargado */
+    border-radius: 10px;
+}
+
+/* --- COLORES PARA LOS COMPONENTES DE LA DERECHA --- */
+#network {
+    color: #a6e3a1; /* Verde */
+    margin-right: 12px;
+}
+
+#language {
+    color: #cba6f7; /* Violeta pastel muy facha */
+    margin-right: 12px;
+}
+
+#battery {
+    color: #f9e2af; /* Amarillo pastel */
+}

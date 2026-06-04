@@ -1,0 +1,42 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "margin-top": 8,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 10,
+
+    // Separamos los módulos para poder darles forma de islas independientes
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "hyprland/language", "battery"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        }
+    },
+    "clock": {
+        "format": "   {:%H:%M}"
+    },
+    "hyprland/language": {
+        "format": "   {short}",
+        "format-en": "US",
+        "format-es": "ES"
+    },
+    "network": {
+        "format-wifi": "   {essid}",
+        "format-disconnected": "⚠  Offline"
+    },
+    "battery": {
+        "format": "{icon}  {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    }
+}
