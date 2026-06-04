@@ -7,6 +7,10 @@ function code
     command code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations $argv
 end
 
+# Alias basicos
+
+alias hx="helix"
+
 # Escribir 'y' en la terminal abrirá el gestor de archivos Yazi al instante
 alias y="yazi"
 

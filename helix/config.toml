@@ -1,0 +1,11 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative" # Números de línea relativos (clave para moverte rápido)
+mouse = false            # Desactivamos el mouse para forzar la memoria muscular
+cursorline = true        # Resalta la línea donde estás parado
+
+[editor.cursor-shape]
+insert = "bar"           # Cursor de barra cuando escribís
+normal = "block"         # Cursor de bloque cuando navegás
+select = "underline"     # Cursor subrayado al seleccionar
