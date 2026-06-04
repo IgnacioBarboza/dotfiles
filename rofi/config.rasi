@@ -1,0 +1,24 @@
+configuration {
+    modi: "drun";
+    show-icons: false;
+    display-drun: "> run:";
+}
+
+* {
+    background-color: transparent;
+    text-color:       #a6e3a1; /* Verde fósforo clásico estilo terminal */
+    font:             "JetBrains Mono 11";
+}
+
+window {
+    width:            400px;
+}
+
+listview {
+    lines:            6;
+    spacing:          6px;
+}
+
+element selected {
+    text-color:       #ffffff; /* Brilla en blanco puro al seleccionarlo */
+}
