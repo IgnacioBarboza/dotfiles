@@ -16,4 +16,31 @@ Repositorio destinado a la gestión centralizada de configuraciones para mi ento
 - [x] Crear el perfil limpio aislado.
 - [x] Instalar componentes base (`hyprland`, `kitty`, `fish`, `helix`).
 - [x] Configurar Git global y archivo `.gitignore`.
-- [ ] Mapear los atajos básicos de teclado en `hyprland.conf`.
+- [x] Mapear los atajos básicos de teclado en `hyprland.conf`.
+
+
+## 🛠️ Stack Tecnológico Integrado
+* **Compositor:** Hyprland (Wayland nativo)
+* **Terminal:** Kitty
+* **Shell:** Fish Shell (con alias de velocidad)
+* **Editor de Código:** VS Code (para sesiones largas) & Helix (para edición rápida en terminal)
+* **Gestor de Archivos:** Yazi (Terminal-based)
+* **Lanzador de Apps:** Rofi (Wayland-fork)
+
+## 📥 Cómo replicar este entorno desde cero
+
+Si formateo la máquina o instalo Arch de cero, los pasos para recuperar todo son:
+
+### 1. Configurar tus llaves SSH en GitHub
+Asegurarse de generar la llave e importarla en la cuenta para poder clonar y empujar cambios sin contraseñas:
+```bash
+ssh-keygen -t ed25519 -C "gobanacho@gmail.com"
+
+### 2. Clonar el repositorio en la carpeta de configuración
+
+git clone git@github.com:IgnacioBarboza/dotfiles.git ~/.config
+
+### 3. Ejecutar el instalador automático
+
+cd ~/.config
+./install.sh
