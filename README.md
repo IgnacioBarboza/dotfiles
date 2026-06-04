@@ -42,7 +42,7 @@ Si es necesario formatear la máquina o replicar este entorno en un hardware lim
 
 ### 1. Configurar las llaves SSH en GitHub
 Asegurarse de generar la llave e importarla en la interfaz web de GitHub para poder clonar y empujar cambios de forma segura sin contraseñas:
-```bash
+
 ssh-keygen -t ed25519 -C "gobanacho@gmail.com"
 cat ~/.ssh/id_ed25519.pub
 
@@ -55,3 +55,4 @@ git clone git@github.com:IgnacioBarboza/dotfiles.git ~/.config
 cd ~/.config
 chmod +x install.sh
 ./install.sh
+```bash
