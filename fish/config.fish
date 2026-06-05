@@ -45,11 +45,10 @@ end
 
 alias hx="helix"
 set -gx EDITOR helix
-# Escribir 'y' en la terminal abrirá el gestor de archivos Yazi al instante
-alias y="yazi"
 
 # Atajos rápidos para Git (Para no escribir tanto comando largo)
 alias gst="git status"
 alias gadd="git add ."
 alias gcm="git commit -m"
 alias gpush="git push"
+

@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background-color: rgb(30,30,30,0.85);
+    background-color: rgba(30,30,30,0.85);
 }
 
 /* --- ESTILO ÓVALO FLOTANTE PARA CADA ISLA --- */
@@ -16,11 +16,15 @@ window#waybar {
 #clock,
 #mpris,
 .modules-right {
-    background-color: rgb(0,0,0,0.85) /*#11111b*/
+    background-color: rgba(0,0,0,0.85); /*#11111b*/
     border: 1px solid #313244;
     border-radius: 12px;
     padding: 0px 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+#clock,
+#mpris {
+    color: #ecae74; /* Celeste claro para el audio */
 }
 
 /* Margen extra para separar el botón de apagado de los escritorios */

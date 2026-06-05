@@ -34,7 +34,10 @@
             "default": "▶",
             "spotify": "",
             "youtube": ""
-        }
+        },
+        "tooltip-format": "{title} - {artist}",
+        "tooltip-format-playing": "{title} - {artist}",
+        "tooltip-format-paused": "{title} - {artist}"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
