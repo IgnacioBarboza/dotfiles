@@ -1,0 +1,30 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "small",
+    "padding": {
+      "top": 1,
+      "right": 2
+    }
+  },
+  "display": {
+    "separator": " ➜ ",
+    "color": "38;5;208"
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "kernel",
+    {
+      "type": "uptime",
+      "key": "Tiempo activo"
+    },
+    "packages",
+    "shell",
+    "wm",
+    "terminal",
+    "cpu",
+    "memory"
+  ]
+}

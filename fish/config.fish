@@ -52,3 +52,6 @@ alias gadd="git add ."
 alias gcm="git commit -m"
 alias gpush="git push"
 
+function fish_greeting
+    fastfetch
+end

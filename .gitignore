@@ -35,7 +35,9 @@ Code/CachedData/
 !fish/**
 !waybar/
 !waybar/**
-!mako/
+!fastfetch/ 
+!fastfetch/**
+!mako/  
 !mako/**
 !rofi/
 !rofi/**
