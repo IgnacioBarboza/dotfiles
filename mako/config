@@ -15,7 +15,7 @@ padding=15
 border-size=2
 border-radius=5
 default-timeout=5000
-format = <b>%s</b>\n%b
+format=<b>%s</b>\n%b
 
 [urgency=high]
 border-color=#BF616A
