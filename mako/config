@@ -1,7 +1,8 @@
 # ~/.config/mako/config
 # Tema Nord para Mako
 
-background-color=#2E3440
+# Ejemplo: Un fondo oscuro con aproximadamente un 80% de opacidad (CC)
+background-color=#1e1e2eCC
 text-color=#D8DEE9
 border-color=#88C0D0
 progress-color=over #434C5E
