@@ -12,8 +12,8 @@ echo "=========================================="
 echo "--> Actualizando repositorios de Pacman..."
 sudo pacman -Syu --noconfirm
 
-# 2. Instalar el Stack Tecnológico Principal
-echo "--> Instalando herramientas de terminal, entorno y dependencias de Hyprland..."
+# 2. Instalar el Stack Tecnológico Principal (Repositorios Oficiales)
+echo "--> Instalando herramientas de terminal, entorno y dependencias..."
 sudo pacman -S --noconfirm \
     kitty \
     fish \
@@ -39,8 +39,24 @@ sudo pacman -S --noconfirm \
     brightnessctl \
     playerctl \
     grim \
-    
-# 3. Configurar Fish como la Shell por defecto
+    fastfetch \
+    network-manager-applet \
+    pamixer \
+    wev \
+    python-pywal \
+    wlogout \
+    hyprpaper \
+    swaybg
+
+# 3. Instalar aplicaciones y herramientas desde AUR
+echo "--> Instalando paquetes adicionales desde AUR..."
+yay -S --noconfirm \
+    brave-bin \
+    spotify \
+    vesktop-bin \
+    swayosd-git
+
+# 4. Configurar Fish como la Shell por defecto
 echo "--> Configurando Fish como la shell predeterminada..."
 sudo usermod -s /usr/bin/fish $USER
 
