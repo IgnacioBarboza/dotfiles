@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# 🚀 SCRIPT DE INSTALACIÓN AUTOMÁTICA DE DOTFILES
+# 🚀 SCRIPT DE INSTALACIÓN AUTOMÁTICA DE DOTFILES (ACTUALIZADO)
 # =============================================================================
 
 echo "=========================================="
@@ -13,7 +13,7 @@ echo "--> Actualizando repositorios de Pacman..."
 sudo pacman -Syu --noconfirm
 
 # 2. Instalar el Stack Tecnológico Principal
-echo "--> Instalando herramientas de terminal y entorno..."
+echo "--> Instalando herramientas de terminal, entorno y dependencias de Hyprland..."
 sudo pacman -S --noconfirm \
     kitty \
     fish \
@@ -24,7 +24,6 @@ sudo pacman -S --noconfirm \
     xdg-desktop-portal-hyprland \
     xdg-desktop-portal-gtk \
     git \
-    mako \
     libnotify \
     ffmpegthumbnailer \
     p7zip \
@@ -33,8 +32,14 @@ sudo pacman -S --noconfirm \
     fd \
     ripgrep \
     fzf \
-    imagemagick
-
+    imagemagick \
+    dunst \
+    waybar \
+    wireplumber \
+    brightnessctl \
+    playerctl \
+    grim \
+    
 # 3. Configurar Fish como la Shell por defecto
 echo "--> Configurando Fish como la shell predeterminada..."
 sudo usermod -s /usr/bin/fish $USER

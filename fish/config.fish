@@ -2,14 +2,18 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# Atajo definitivo para VS Code nativo en Wayland y con pathing automático
 function code
-    command code $argv --detach >/dev/null 2>&1
-    if contains "." $argv or test (count $argv) -eq 0
-        kill -9 (pgrep -o kitty) # Mata de forma segura la terminal actual desde donde lo invocaste
+    # Si no pasás argumentos o le pasás un punto, usa la ruta absoluta actual ($PWD)
+    if test (count $argv) -eq 0; or contains "." $argv
+        command code-oss $PWD >/dev/null 2>&1 &
+        disown
+        exit
+    else
+        # Si le pasás un archivo específico (ej: code archivo.txt), lo abre sin cerrar la terminal
+        command code-oss $argv >/dev/null 2>&1 &
+        disown
     end
 end
-
 # Codigo para agregar sudo con esc + esc
 function prepend_sudo_or_fallback
     set -l cmd (commandline)
