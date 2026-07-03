@@ -1,43 +1,44 @@
-#Ignorar carpetas generadas automaticamente por las apps (cache y temporales)
-**/cache/
-**/.cache/
-**/tmp/
-
-#Ignorar archivos internos del sistema de ventanas o estados locales
-**/.DS_Store
-Thumbs.db
-*.swp
-*~
-
-#Ignorar base de datos local y ssesione de Discord/VS Code
-discord/Cache
-discord/Local Storage/
-Code/User/WorkspaceStorage/
-Code/CachedData/
-
-# Ignorar absolutamente todo por defecto en ~/.config
+# Ignorar absolutamente todo por defecto
 *
 
-# Excepciones: Permitir explícitamente rastrear el archivo .gitignore y el README
+# Excepciones: Permitir rastrear archivos en la raíz
 !README.md
 !.gitignore
+!install.sh
+!prompt_restauración.txt
 
-# Excepciones: Permitir rastrear solo tus carpetas de personalización elegidas
-!hypr/
-!hypr/**
-!helix/
-!helix/**
-!yazi/
-!yazi/**
-!kitty/
-!kitty/**
-!fish/
-!fish/**
-!waybar/
-!waybar/**
-!fastfetch/ 
-!fastfetch/**
-!mako/  
-!mako/**
-!rofi/
-!rofi/**
+# ⚠️ CRÍTICO: Permitir a Git entrar a la carpeta .config
+!.config/
+
+# Excepciones: Archivos sueltos dentro de .config
+!.config/mimeapps.list
+!.config/brave-flags.conf
+!.config/code-flags.conf
+
+# Excepciones: Carpetas de dotfiles dentro de .config
+!.config/hypr/
+!.config/hypr/**
+!.config/waybar/
+!.config/waybar/**
+!.config/rofi/
+!.config/rofi/**
+!.config/mako/
+!.config/mako/**
+!.config/swayosd/
+!.config/swayosd/**
+!.config/kitty/
+!.config/kitty/**
+!.config/fish/
+!.config/fish/**
+!.config/fastfetch/
+!.config/fastfetch/**
+!.config/btop/
+!.config/btop/**
+!.config/yazi/
+!.config/yazi/**
+!.config/helix/
+!.config/helix/**
+!.config/nvim/
+!.config/nvim/**
+!.config/gtk-3.0/
+!.config/gtk-3.0/**
