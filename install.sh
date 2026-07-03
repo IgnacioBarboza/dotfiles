@@ -97,15 +97,19 @@ sudo usermod -s /usr/bin/fish $USER
 
 # 7. Clonar y aplicar Dotfiles con GNU Stow
 echo "--> Configurando dotfiles con GNU Stow..."
-# Aseguramos que no haya conflictos con archivos predeterminados que crea el sistema
-rm -rf ~/.bashrc
 
-# Clonamos tu repositorio (¡Recordá cambiar esta URL por tu repo real!)
+# Limpiamos archivos por defecto para evitar conflictos con Stow
+rm -rf ~/.bashrc ~/.config/hypr ~/.config/kitty ~/.config/waybar ~/.config/rofi
+
+# Clonamos tu repositorio
 git clone https://github.com/IgnacioBarboza/dotfiles.git ~/dotfiles
 
-# Entramos al directorio y ejecutamos stow apuntando al home
+# Entramos al directorio
 cd ~/dotfiles
-stow -t ~ .
+
+# Usamos el comodín */ para que Stow solo enlace los directorios 
+# (ej. kitty/, hypr/) y omita archivos sueltos o la carpeta oculta .git
+stow -t ~ */
 
 echo "=========================================="
 echo " ¡Instalación base completada con éxito!  "
