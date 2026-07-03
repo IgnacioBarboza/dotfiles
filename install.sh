@@ -101,7 +101,7 @@ echo "--> Configurando dotfiles con GNU Stow..."
 rm -rf ~/.bashrc
 
 # Clonamos tu repositorio (¡Recordá cambiar esta URL por tu repo real!)
-git clone https://github.com/TU_USUARIO/dotfiles.git ~/dotfiles
+git clone https://github.com/IgnacioBarboza/dotfiles.git ~/dotfiles
 
 # Entramos al directorio y ejecutamos stow apuntando al home
 cd ~/dotfiles
