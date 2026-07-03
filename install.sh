@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# 🚀 SCRIPT DE INSTALACIÓN AUTOMÁTICA DE DOTFILES (ACTUALIZADO)
+# 🚀 SCRIPT DE INSTALACIÓN AUTOMÁTICA DE DOTFILES (ACTUALIZADO CON STOW)
 # =============================================================================
 
 echo "=========================================="
@@ -13,17 +13,28 @@ echo "--> Actualizando repositorios de Pacman..."
 sudo pacman -Syu --noconfirm
 
 # 2. Instalar el Stack Tecnológico Principal (Repositorios Oficiales)
-echo "--> Instalando herramientas de terminal, entorno y dependencias..."
+echo "--> Instalando entorno, terminales, utilidades y lenguajes..."
 sudo pacman -S --noconfirm \
+    hyprland \
+    xdg-desktop-portal-hyprland \
+    xdg-desktop-portal-gtk \
+    waybar \
+    mako \
+    hyprpaper \
+    swaybg \
+    wlogout \
+    wev \
+    rofi-wayland \
     kitty \
     fish \
     helix \
-    yazi \
-    rofi-wayland \
+    neovim \
     code \
-    xdg-desktop-portal-hyprland \
-    xdg-desktop-portal-gtk \
+    yazi \
+    nautilus \
     git \
+    stow \
+    base-devel \
     libnotify \
     ffmpegthumbnailer \
     p7zip \
@@ -33,34 +44,70 @@ sudo pacman -S --noconfirm \
     ripgrep \
     fzf \
     imagemagick \
-    dunst \
-    waybar \
-    wireplumber \
     brightnessctl \
     playerctl \
     grim \
     fastfetch \
     network-manager-applet \
+    pipewire \
+    pipewire-audio \
+    pipewire-pulse \
+    pipewire-alsa \
+    wireplumber \
     pamixer \
-    wev \
     python-pywal \
-    wlogout \
-    hyprpaper \
-    swaybg
+    xdg-user-dirs \
+    btop \
+    evolution \
+    gimp \
+    firefox \
+    dotnet-sdk \
+    aspnet-runtime \
+    jdk-openjdk
 
-# 3. Instalar aplicaciones y herramientas desde AUR
+# 3. Crear carpetas de usuario estándar
+echo "--> Creando directorios de usuario..."
+xdg-user-dirs-update
+
+# 4. Compilar e instalar 'yay' (Helper de AUR)
+echo "--> Instalando yay..."
+if ! command -v yay &> /dev/null; then
+    cd /tmp
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si --noconfirm
+    cd ~
+else
+    echo "yay ya está instalado."
+fi
+
+# 5. Instalar aplicaciones y herramientas desde AUR
 echo "--> Instalando paquetes adicionales desde AUR..."
 yay -S --noconfirm \
     brave-bin \
     spotify \
     vesktop-bin \
-    swayosd-git
+    swayosd-git \
+    notion-app-electron \
+    dbeaver-ce
 
-# 4. Configurar Fish como la Shell por defecto
+# 6. Configurar Fish como la Shell por defecto
 echo "--> Configurando Fish como la shell predeterminada..."
 sudo usermod -s /usr/bin/fish $USER
 
+# 7. Clonar y aplicar Dotfiles con GNU Stow
+echo "--> Configurando dotfiles con GNU Stow..."
+# Aseguramos que no haya conflictos con archivos predeterminados que crea el sistema
+rm -rf ~/.bashrc
+
+# Clonamos tu repositorio (¡Recordá cambiar esta URL por tu repo real!)
+git clone https://github.com/TU_USUARIO/dotfiles.git ~/dotfiles
+
+# Entramos al directorio y ejecutamos stow apuntando al home
+cd ~/dotfiles
+stow -t ~ .
+
 echo "=========================================="
-echo " ¡Instalación completada con éxito!       "
+echo " ¡Instalación base completada con éxito!  "
 echo " Reiniciá la sesión para aplicar los cambios."
 echo "=========================================="
