@@ -50,7 +50,6 @@ sudo pacman -S --noconfirm \
     fastfetch \
     network-manager-applet \
     pipewire \
-    pipewire-audio \
     pipewire-pulse \
     pipewire-alsa \
     wireplumber \
@@ -63,6 +62,7 @@ sudo pacman -S --noconfirm \
     firefox \
     dotnet-sdk \
     aspnet-runtime \
+    dbeaver \
     jdk-openjdk
 
 # 3. Crear carpetas de usuario estándar
@@ -88,8 +88,7 @@ yay -S --noconfirm \
     spotify \
     vesktop-bin \
     swayosd-git \
-    notion-app-electron \
-    dbeaver-ce
+    notion-app-electron 
 
 # 6. Configurar Fish como la Shell por defecto
 echo "--> Configurando Fish como la shell predeterminada..."
